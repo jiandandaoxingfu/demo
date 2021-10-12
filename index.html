@@ -5,7 +5,18 @@
 </head>
 <body>
 	<script>
-		alert(new Array(10001).join(',').split(',').map( (d, i) => i ).map( i => 2.3581321 * Math.exp(-Math.pow(2.3581321 * i / 10000, 2)) / 10000 ).reduce((i, j) => i + j))
+		let password = prompt('输入密码：', '');
+
+		try {
+			password = parseFloat(password);
+		} catch {
+			password = 0;
+		}
+
+		let result = new Array(10001).join(',').split(',').map( (d, i) => i ).map( i => password * Math.exp(-Math.pow(password * i / 10000, 2)) / 10000 ).reduce((i, j) => i + j);
+		if ( Math.abs(result - 0.8855890739277603) < Math.pow(1/10, 100) ) {
+			alert('密码正确');
+		}
 	</script>
 </body>
 </html>
