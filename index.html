@@ -17,7 +17,7 @@
 			.map( i => password / 10000 * (Math.exp(-Math.pow(Math.sin(1 / (Math.pow(10, -10) + password * i / 10000)), 2)) - (1 + Math.exp(-1)) / 2 ) )
 			.reduce((i, j) => i + j);
 		alert(result);
-		if ( Math.abs(result + 0.10893487683382194) < Math.pow(10, -100) ) {
+		if ( Math.abs(result + 0.10893487683382194) < Math.pow(10, -12) ) {
 			alert('密码正确');
 		}
 	</script>
