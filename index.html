@@ -1,0 +1,11 @@
+xt:<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo</title>
+</head>
+<body>
+	<script>
+		alert(new Array(10001).join(',').split(',').map( (d, i) => i ).map( i => 3 * Math.exp(-Math.pow(3 * i / 10000, 2)) / 10000 ).reduce((i, j) => i + j))
+	</script>
+</body>
+</html>
